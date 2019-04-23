@@ -53,7 +53,8 @@ class Watershed(object):
       current_level = 0
 
       # Get the indices that deleimit pixels with different values.
-      for i in xrange(total):
+      # Changed for i in xrange(total): for the Python 3 usage:
+      for i in range(total):
          if sorted_image[i] > levels[current_level]:
             # Skip levels until the next highest one is reached.
             while sorted_image[i] > levels[current_level]: current_level += 1
